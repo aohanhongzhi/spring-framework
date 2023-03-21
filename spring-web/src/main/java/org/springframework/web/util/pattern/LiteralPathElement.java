@@ -71,6 +71,7 @@ class LiteralPathElement extends PathElement {
 
 		if (this.caseSensitive) {
 			for (int i = 0; i < this.len; i++) {
+//				这里就是URL比较的核心方法了！ 用来找相似的URL，解决@PathVariable注解的问题
 				if (value.charAt(i) != this.text[i]) {
 					return false;
 				}
